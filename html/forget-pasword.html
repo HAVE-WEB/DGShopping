@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>忘记密码</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../assets/css/amazeui.css">
+    <link rel="stylesheet" href="../assets/css/sl.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/amazeui.js"></script>
+
+</head>
+<body>
+<div class="am-g sl-border-bottom-1px-solid-D3D3D3">
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 sl-background-color-white">
+        <a href="JavaScript:history.go(-1)">
+            <i class="am-icon-arrow-left am-icon-md sl-icon-color-CACACA" style="font-weight:bolder"></i>
+        </a>
+
+
+    </div>
+</div>
+<div class="sl-flex-row-center-center sl-margin-30px-0px">
+    <img src="../assets/images/car.png" style="width: 40%; height: 25%;" alt="">
+</div>
+<form action="action" method="POST" role="form" class="">
+    <div class=" sl-flex-column-center-center sl-height-40px-width-100percent"  style="margin-bottom: 20px" >
+
+        <input type="text" class="" placeholder="邮箱/手机号" placeholder style="height: 40px; width: 80%;background-color: #F4F4F4;" id="phone">
+        <hr style="margin: 0px; border-top: 1px solid #CCCCCC;width: 80%;"/>
+    </div>
+
+    <div class=" sl-flex-column-center-center sl-height-40px-width-100percent" style="margin-bottom: 20px">
+        <div class="sl-flex-row-center-space-between" style="width: 80%;">
+            <input type="number" class="" placeholder="验证码" style="height: 40px; background-color: #F4F4F4;">
+            <span class="sl-font-size-12px sl-margin-right-5px " style="color: #FFCC00;" id="getCode" >获取验证码</span>
+            <span class="sl-font-size-12px sl-margin-right-5px " style="color: #FFCC00;display: none" id="resetCode"><span id="second">60</span>秒后重发</span>
+        </div>
+
+        <hr style="margin: 0px; border-top: 1px solid #CCCCCC;width: 80%;"/>
+    </div>
+    <div class=" sl-flex-column-center-center sl-height-40px-width-100percent" >
+        <div class="sl-flex-row-center-space-between" style="width: 80%;">
+            <input type="password" class="" placeholder="新密码(4-16字符)" placeholder style="height: 40px; width: 80%;background-color: #F4F4F4;">
+            <i class="am-icon-eye-slash" id="eye-no"></i>
+            <i class="am-icon-eye" id="eye" style="display: none;"></i>
+
+        </div>
+        <hr style="margin: 0px; border-top: 1px solid #CCCCCC;width: 80%;"/>
+    </div>
+    <div class="sl-flex-row-center-center sl-margin-top-20px">
+        <button type="submit" class="am-btn sl-background-color-FFCC00 sl-font-color-white sl-border-radius-1000px" style="width: 60%;" id="login">重置密码</button>
+    </div>
+
+    <div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">提示信息</div>
+            <div class="am-modal-bd">
+                手机号码不能为空
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn">确定</span>
+            </div>
+        </div>
+    </div>
+    <div class="am-modal am-modal-alert" tabindex="-1" id="my-phone">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">提示信息</div>
+            <div class="am-modal-bd">
+                手机号码格式不正确
+            </div>
+            <div class="am-modal-footer">
+                <span class="am-modal-btn">确定</span>
+            </div>
+        </div>
+    </div>
+    <div class="am-alert am-animation-slide-top" data-am-alert style="display: none" id="alert">
+        <button type="button" class="am-close">&times;</button>
+        <p>手机号码不能为空</p>
+    </div>
+</form>
+</body>
+<script>
+//    $("input").focus(function () {
+//        $(this).addClass("sl-border-1px-solid-D3D3D3");
+//    }).blur(function () {
+//        $(this).removeClass("sl-border-1px-solid-D3D3D3");
+//    })
+    //密码的隐藏与显示
+    $("#eye-no").click(function () {
+        $(this).hide();
+        $("#eye").show();
+        $(this).prev().attr('type', 'text');
+    })
+    $("#eye").click(function () {
+        $(this).hide();
+        $("#eye-no").show();
+        $("#eye-no").prev().attr('type','password');
+    })
+
+    var isPhone = 1;
+    $("#getCode").click(function () {
+        checkPhone();
+        if(isPhone){
+            resetCode();
+        }else{
+            $('#phone').focus();
+        }
+    })
+
+    //验证手机号
+    function checkPhone(){
+        var phone = $("#phone").val();
+        var patten = /1[0-9]{10}$/;
+        isPhone = 1;
+        if(phone == ''){
+            $("#my-alert").modal();
+            $('#phone').focus();
+            isPhone = 0;
+            return;
+        }
+        if(!patten.test(phone)){
+            $("#my-phone").modal();
+            $('#phone').focus();
+            isPhone = 0;
+            return;
+        }
+    }
+    //倒计时
+    function resetCode() {
+        $("#getCode").hide();
+        $("#resetCode").show();
+        var second = 60;
+        var time = null;
+        time = setInterval(function () {
+            second -= 1;
+            if(second > 0){
+                $("#second").html(second);
+            }else {
+                clearInterval(time);
+                $("#getCode").show();
+                $("#resetCode").hide();
+            }
+        },1000)
+    }
+</script>
+</html>

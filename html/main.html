@@ -1,0 +1,437 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>主页面</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../assets/css/amazeui.css">
+    <link rel="stylesheet" href="../assets/css/sl.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/amazeui.js"></script>
+    <style>
+
+
+    </style>
+
+</head>
+<body >
+<!--固定元素-->
+<div class="sl-flex-row-center-space-around sl-padding-15px-0px-5px-0px"  style="position: fixed;z-index: 1000;width: 100%;" id="fixDiv">
+    <div class=" sl-font-color-D1D1D1 sl-font-size-14px">
+      <span >上海</span>
+        <i class="am-icon-angle-down"></i>
+    </div>
+    <div class="sl-border-radius-1000px sl-font-size-14px sl-font-color-B8B8B8 sl-padding-2px-10px sl-background-color-F1F1F1" >
+        <i class="am-icon-search"></i><span class="">搜索电影、演出、艺人、影院...</span>
+    </div>
+
+</div>
+
+
+<!--图片轮播图-->
+<div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0" >
+    <ul class="am-slides">
+        <li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
+        <li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>
+        <li><img src="http://s.amazeui.org/media/i/demos/bing-3.jpg" /></li>
+        <li><img src="http://s.amazeui.org/media/i/demos/bing-4.jpg" /></li>
+    </ul>
+</div>
+
+
+
+<!---->
+<div class="am-g am-g-fixed" id="test">
+    <div class="am-u-sm-6 am-u-md-6 am-u-lg-6 sl-grid" style="border-right: 2px solid #CCCCCC">
+        <span style="font-weight: bolder">热门活动</span>
+         <span class="sl-font"><i class="am-icon-circle sl-icon "></i>9个活动</span>
+    </div>
+    <div class="am-u-sm-6 am-u-md-6 am-u-lg-6 sl-grid" >
+        <span style="font-weight: bolder">每日红包</span>
+        <span class="sl-font"><i class="am-icon-circle sl-icon "></i>432人领取</span>
+    </div>
+</div>
+<!--分割线-->
+<hr data-am-widget="divider" class="am-divider am-divider-default sl-margin-left sl-margin-right" />
+<!--选项卡-->
+<div class="am-tabs " data-am-tabs="{noSwipe: 1}">
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active"><a href="#tab1">热门电影</a></li>
+        <li><a href="#tab2">即将上映</a></li>
+        <!--<li><a href="#tab3">更多</a></li>-->
+        <div class="sl-grid-row-right">
+            <a href="#" class="sl-font">更多</a>
+            <i class="am-icon-angle-right sl-margin-right sl-margin-left am-icon-sm"></i>
+        </div>
+
+    </ul>
+
+    <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+            <div data-am-widget="slider" class="am-slider am-slider-b2" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="am-tab-panel am-fade" id="tab2">
+            <div data-am-widget="slider" class="am-slider am-slider-c3" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">1</span>/4</div>远方 有一个地方 那里种有我们的梦想</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">2</span>/4</div>某天 也许会相遇 相遇在这个好地方</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">3</span>/4</div>不要太担心 只因为我相信 终会走过这条遥远的道路</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">4</span>/4</div>OH PARA PARADISE 是否那么重要 你是否那么地遥远</div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="am-tabs " data-am-tabs="{noSwipe: 1}">
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active"><a href="#tab3">热门电影</a></li>
+        <li><a href="#tab4">即将上映</a></li>
+        <!--<li><a href="#tab3">更多</a></li>-->
+        <div class="sl-grid-row-right">
+            <a href="#" class="sl-font">更多</a>
+            <i class="am-icon-angle-right sl-margin-right sl-margin-left am-icon-sm"></i>
+        </div>
+
+    </ul>
+
+    <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active"  id="tab3">
+            <div data-am-widget="slider" class="am-slider am-slider-b2" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="am-tab-panel am-fade"  id="tab4">
+            <div data-am-widget="slider" class="am-slider am-slider-c3" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">1</span>/4</div>远方 有一个地方 那里种有我们的梦想</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">2</span>/4</div>某天 也许会相遇 相遇在这个好地方</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">3</span>/4</div>不要太担心 只因为我相信 终会走过这条遥远的道路</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">4</span>/4</div>OH PARA PARADISE 是否那么重要 你是否那么地遥远</div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="am-tabs " data-am-tabs="{noSwipe: 1}">
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active"><a href="#tab3">热门电影</a></li>
+        <li><a href="#tab4">即将上映</a></li>
+        <!--<li><a href="#tab3">更多</a></li>-->
+        <div class="sl-grid-row-right">
+            <a href="#" class="sl-font">更多</a>
+            <i class="am-icon-angle-right sl-margin-right sl-margin-left am-icon-sm"></i>
+        </div>
+
+    </ul>
+
+    <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active"  id="tab3">
+            <div data-am-widget="slider" class="am-slider am-slider-b2" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="am-tab-panel am-fade"  id="tab4">
+            <div data-am-widget="slider" class="am-slider am-slider-c3" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">1</span>/4</div>远方 有一个地方 那里种有我们的梦想</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">2</span>/4</div>某天 也许会相遇 相遇在这个好地方</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">3</span>/4</div>不要太担心 只因为我相信 终会走过这条遥远的道路</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">4</span>/4</div>OH PARA PARADISE 是否那么重要 你是否那么地遥远</div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="am-tabs " data-am-tabs="{noSwipe: 1}">
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active"><a href="#tab3">热门电影</a></li>
+        <li><a href="#tab4">即将上映</a></li>
+        <!--<li><a href="#tab3">更多</a></li>-->
+        <div class="sl-grid-row-right">
+            <a href="#" class="sl-font">更多</a>
+            <i class="am-icon-angle-right sl-margin-right sl-margin-left am-icon-sm"></i>
+        </div>
+
+    </ul>
+
+    <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active"  id="tab3">
+            <div data-am-widget="slider" class="am-slider am-slider-b2" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="am-tab-panel am-fade"  id="tab4">
+            <div data-am-widget="slider" class="am-slider am-slider-c3" data-am-slider='{"controlNav":false}' >
+                <ul class="am-slides">
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">1</span>/4</div>远方 有一个地方 那里种有我们的梦想</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">2</span>/4</div>某天 也许会相遇 相遇在这个好地方</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">3</span>/4</div>不要太担心 只因为我相信 终会走过这条遥远的道路</div>
+
+                    </li>
+                    <li>
+                        <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
+                        <div class="am-slider-desc"><div class="am-slider-counter"><span class="am-active">4</span>/4</div>OH PARA PARADISE 是否那么重要 你是否那么地遥远</div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="sl-flex-row-center-space-around sl-padding-15px-0px-5px-0px"  style="position: fixed;z-index: 1001;top: 80%;left: 80%;display: none" id="up">
+    <!--<div class=" sl-font-color-D1D1D1 sl-font-size-14px">-->
+        <!--<span >上海</span>-->
+        <!--<i class="am-icon-angle-down"></i>-->
+    <!--</div>-->
+    <!--<div class="sl-border-radius-1000px sl-font-size-14px sl-font-color-B8B8B8 sl-padding-2px-10px sl-background-color-F1F1F1" >-->
+        <!--<i class="am-icon-search"></i><span class="">搜索电影、演出、艺人、影院...</span>-->
+    <!--</div>-->
+    <!--<button data-am-smooth-scroll class=""><i class="am-icon-arrow-up"></i><span>顶部</span></button>-->
+   <span class="sl-flex-column-center-center sl-background-color-F1F1F1 sl-border-radius-1000px"  style="height: 30px ; width: 30px"><i class="am-icon-arrow-up sl-font-color-gray" style="padding: 0px;margin: 0px;"></i></span>
+</div>
+
+
+
+
+
+
+
+
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="bottom-nav">
+    <ul class=" am-navbar-nav am-cf am-avg-sm-4 ">
+        <li >
+            <a href="#" class="">
+                <i class="am-icon-home sl-icon-color-red"></i>
+                <span class="am-navbar-label sl-font-color-red">推荐</span>
+            </a>
+        </li>
+        <li >
+            <a href="tel:18601860186" class="">
+                <i class="am-icon-tasks sl-icon-color-6D6D6D"></i>
+                <span class="am-navbar-label sl-icon-color-6D6D6D">分类</span>
+            </a>
+        </li>
+        <li data-am-navbar-share>
+            <a href="my.html" class="">
+               <i class="am-icon-search sl-icon-color-6D6D6D"></i>
+                <span class="am-navbar-label sl-icon-color-6D6D6D">发现</span>
+            </a>
+        </li>
+        <li >
+            <a href="my.html" class="">
+               <!--<i class="fa fa-user-o sl-icon-color-6D6D6D"></i>-->
+                <i class="am-icon-user sl-icon-color-6D6D6D" aria-hidden="true"></i>
+                <span class="am-navbar-label sl-icon-color-6D6D6D">我的</span>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+
+    
+//    $(document).ready(function () {
+//       var t= $("#slider-image").offset();
+//       console.log("T:"+t)
+//    })
+
+
+    $("#test").click(function () {
+        var t = $("#demo-slider-0").position();
+        var win_height = window.innerHeight;
+        var win_width = window.innerWidth
+        var out_height = window.outerHeight;
+        var out_width = window.outerWidth;
+        var screen_top= window.screenTop;
+        var screen_left = window.screenLeft;
+        var s_height = screen.height;
+        var s_width = screen.width;
+        var pageXOffset = window.pageXOffset;
+        var pageYOffset =window.pageYOffset
+
+        console.log(win_height + "," + win_width+","+out_height+","+out_width+","+screen_left+"，"+screen_top+"."+s_height+","+s_width+","+pageXOffset+","+pageYOffset+",div:"+div_height)
+
+        var className = document.getElementById("fixDiv").className;
+        console.log("c:"+className)
+    })
+    $(document).scroll(function () {
+        var div_height = $("#demo-slider-0").height();
+        if(div_height < window.pageYOffset){
+            $("#fixDiv").addClass("sl-background-color-white")
+            $("#up").fadeIn();
+        }else{
+            $("#fixDiv").removeClass("sl-background-color-white")
+            $("#up").fadeOut()
+        }
+    })
+    $("#up").click(function () {
+        $('html, body').animate({scrollTop: 0}, '500');
+    })
+
+</script>
