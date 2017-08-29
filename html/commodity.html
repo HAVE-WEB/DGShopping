@@ -38,13 +38,13 @@
     <script src="../assets/js/myFirst.js"></script>
     <style>
         div.am-tabs-bd button{
-            /*border: 1px solid red;*/
+            /*border: 6px solid red;*/
             padding: 0.2rem 0.6rem;
             color: white;
             background-color: red;
             /*-webkit-border-radius: 2px;*/
             /*-moz-border-radius: 2px;*/
-            /*border-radius: 2px;*/
+            border-radius: 0.8rem;
         }
 
     </style>
@@ -53,7 +53,7 @@
 <body >
 <div class="top-div" style="width: 100%;position:fixed;top: 0px;left: 0px;z-index: 10010">
     <div class="sl-flex-row-center-space-between " style="background-color: red;height: 3rem;padding-left: 0.8rem;">
-        <a href="party.html"><img src="../assets/images/back.png" alt="" style="width: 1.5rem;height: 1.5rem;"></a>
+        <a onclick="goBack()"><img src="../assets/images/back.png" alt="" style="width: 1.5rem;height: 1.5rem;"></a>
         <!--<div class="sl-flex-row-center-flex-end"><i class="am-icon-search" style="margin-right: 0.8rem;" onclick="insertSearch()"></i>-->
             <!--<a href="strong-big-input.html"  class="sl-margin-right-1rem sl-font-color-white"><i class="am-icon-plus"></i></a>-->
         <!--</div>-->
@@ -242,7 +242,7 @@
                 <span>可以购买的数量&nbsp;:&nbsp;</span><b style="color: red;">10</b><span>&nbsp;个</span>
             </div>
             <div class="sl-flex-row-center-space-between">
-                <span>数量:</span><input type="number" class="am-modal-prompt-input">
+                <span>数量:</span><input type="number" oninput="checkVal(this)" class="am-modal-prompt-input">
             </div>
 
         </div>
@@ -274,7 +274,7 @@
 <script>
     //全局变量
     var rem = new Rem();
-
+    var num = 0;
     //回顶部
     $("#up").click(function () {
         $('html, body').animate({scrollTop: 0}, '500');
@@ -285,19 +285,23 @@
         $(this).addClass('am-active').siblings('li').removeClass('am-active');
     })
 
+    //点击兑换按钮
     $(function () {
         $('button').on('click', function () {
             var price = parseInt($(this).prev().find('span:first').html());
            var $div = $('div.am-modal-bd').children();
             $div.eq(1).find('b').html(price);
             var yourJF = parseInt($div.eq(0).find('b').html());
-            var num = parseInt(yourJF / price);
+            num = parseInt(yourJF / price);
             $div.eq(2).find('b').html(num);
+            $div.eq(3).find('input').attr('max',num);
             $('#my-prompt').modal({
                 relatedTarget: this,
                 onConfirm: function(e) {
                     var tempNum =parseInt(e.data) ;
-                    if(tempNum > num){
+                    console.log(tempNum);
+
+                    if(tempNum < 0 || tempNum > num){
                         rem.alertInfoByState('购买失败',1)
                     }else{
                         rem.alertInfoByState('购买成功',0)
@@ -308,5 +312,28 @@
                 }
             });
         })
-    })
+    });
+    //时时刻刻检查输入框中的值
+    function checkVal(self) {
+        var flag = false;
+        var f = $(self).val();
+        if(f.indexOf('.') > 0){
+            flag = true;
+        }
+        var n = parseInt($(self).val());
+        if(isNaN(n) || n < 0  ||flag){
+            $(self).val('');
+            rem.alertInfoByState('请输入正整数',1)
+        }
+        if( n > num ){
+            $(self).val('');
+            rem.alertInfoByState('积分不足',1)
+        }
+    }
+
+    //
+    function goBack() {
+        history.back();
+    }
+
 </script>
