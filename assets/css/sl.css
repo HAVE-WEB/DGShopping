@@ -1,6 +1,30 @@
-body{
+.sl-font-size-14px-sm{
     background-color: #F4F4F4;
-    font-size: 16px;
+    font-size: 14px;
+}
+.sl-font-size-16px-md{
+    background-color: #F4F4F4;
+    font-size: 1.6rem;
+}
+.sl-font-size-18px-lg{
+    background-color: #F4F4F4;
+    font-size: 18px;
+}
+.sl-font-size-26px-2lg{
+    background-color: #F4F4F4;
+    font-size: 26px;
+}
+::-webkit-input-placeholder{
+    font-size: 1rem;
+}
+:-moz-placeholder {/* Firefox 18- */
+    font-size: 14px;
+}
+::-moz-placeholder{/* Firefox 19+ */
+    font-size: 14px;
+}
+:-ms-input-placeholder {
+    font-size: 14px;
 }
 * {
     margin: 0;
@@ -8,9 +32,19 @@ body{
     border:0;
 
 }
+/*html{*/
+    /*font-size:62.5%;*/
+/*}*/
+/*微信背景色*/
+body{
+    background-color: #F0EFF5;
+}
 .sl-height-40px-width-100percent{
    height: 40px;
     width: 100%;
+}
+.sl-background-color-fcc{
+    background-color: #FFCCCC;
 }
 .sl-grid{
     display:flex;
@@ -35,6 +69,15 @@ body{
 }
 .sl-font-color-CC9900{
     color: #CC9900;
+}
+ .sl-font-color-FF6666{
+     color: #FF6666;
+ }
+ .sl-width-percent100{
+     width:100%;
+ }
+.sl-height-percent100{
+    height:100%;
 }
 .sl-flex-row-center-flex-start{
     display:flex;
@@ -76,6 +119,9 @@ body{
 .sl-margin-left-5px{
     margin-left: 5px;
 }
+.sl-margin-left-10px{
+    margin-left: 10px;
+}
 .sl-margin-right{
     margin-right: 10px;
 }
@@ -115,6 +161,12 @@ body{
 .sl-icon-color-red{
     color: #FF3366;
 }
+.sl-icon-color-dd514c{
+    color: #dd514c;
+}
+.sl-icon-color-FF9966{
+    color: #FF9966;
+}
 .sl-font-color-gray{
     color:#999999;
 }
@@ -127,14 +179,17 @@ body{
 .sl-font-size-10px{
     font-size:10px;
 }
+.sl-font-size-8px{
+    font-size:8px;
+}
 .sl-font-size-14px{
     font-size:14px;
 }
+.sl-font-size-16px{
+    font-size:16px;
+}
 .sl-padding-2px-5px{
     padding: 2px 5px;
-}
-.sl-padding-15px-0px-5px-0px{
-    padding: 15px 0px 5px 0px;
 }
 .sl-padding-2px-10px{
     padding: 2px 10px;
@@ -150,14 +205,29 @@ body{
     justify-content:center;
     align-items: center;
 }
+.sl-flex-column-center-flex-start{
+    display: flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+}
 .sl-flex-column-flex-start-center{
     display: flex;
     flex-direction:column;
     justify-content:center;
     align-items: flex-start;
 }
+.sl-flex-column-flex-start-space-between{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: flex-start;
+}
 .sl-padding-top-10px{
     padding-top: 10px;
+}
+.sl-padding-right-10px{
+    padding-right: 10px;
 }
 .sl-border-radius-percent50{
     border-radius: 50%;
@@ -180,6 +250,12 @@ body{
 .sl-border-bottom-1px-solid-D3D3D3{
     border-bottom:1px solid #D3D3D3;
 }
+.sl-border-bottom-1px-solid-white{
+    border-bottom:1px solid #FFFFFF;
+}
+.sl-border-right-1px-solid-white{
+    border-right:1px solid #FFFFFF;
+}
 .sl-padding-10px-0px{
     padding: 10px 0px;
 }
@@ -199,14 +275,23 @@ body{
 .sl-margin-top-10px{
     margin-top: 10px;
 }
+.sl-margin-top-5px{
+    margin-top: 5px;
+}
 .sl-margin-top-30px{
     margin-top: 30px;
 }
 .sl-margin-30px-0px{
     margin: 30px 0px;
 }
+.sl-margin-20px-0px{
+    margin: 20px 0px;
+}
 .sl-background-color-FFCC00{
     background-color: #FFCC00;
+}
+.sl-background-color-FFCCCC{
+    background-color: #FFCCCC;
 }
 .sl-background-color-F1F1F1{
     background-color: #F1F1F1;
@@ -216,5 +301,8 @@ body{
  }
 .sl-font-color-D1D1D1{
     color: #D1D1D1;
+}
+.sl-font-weight-bolder{
+    font-weight:bolder;
 }
 
