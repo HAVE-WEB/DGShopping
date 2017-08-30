@@ -1336,6 +1336,37 @@
             setTimeout(function () {
                 $('div.my-alert').hide();
             },2000);
+        },
+        bottomNavFixed: function (self) {
+            var sH = screen.height;
+            var sW = screen.width;
+            var h = self.outerHeight();
+            var w = self.outerWidth();
+            self.css({
+                position: 'fixed',
+                top: sH - h,
+                left: sW -  w
+            }).css('z-index','10001');
+        },
+        inputVal: function ($input) {
+                // var k = $.trim($input.val());
+                // if(k === ''){
+                //     return;
+                //     this.alertInfoByState('输入框中不能为空',1);
+                //     return false;
+                // }
+                var val = parseInt($.trim($input.val()));
+                if(isNaN(val)){
+                    this.alertInfoByState('输入的不是数字',1);
+                    $input.val(1);
+                    return false;
+                }
+                if(val <= 0){
+                    this.alertInfoByState('兑换数量不能小于0',1);
+                    $input.val(1);
+                    return false
+                }
+                return true
         }
 
     };
