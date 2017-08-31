@@ -708,9 +708,9 @@
                 $(m).appendTo("body");
             },
             titleCenter: function () {
-                var self = this;
-                var wWindow = self.innerWidth;//屏幕宽度
-                var $i = $(".top-div").find('i');//i图标对象
+                // var self = this;
+                var wWindow = screen.width;//屏幕宽度
+                var $i = $(".top-div").find('img');//i图标对象
                 var $div = $('.top-div .title');//标题对象
                 var leftI = $i.offset().left;
                 var wI = $i.outerWidth();

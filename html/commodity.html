@@ -47,242 +47,141 @@
             /*border-radius: 0.8rem;*/
         }
 
+        ::-webkit-scrollbar{
+            width: 0.1rem;
+        }
+
     </style>
 
 </head>
 <body >
-<!---->
-<div class="top-div" style="width: 100%;position:fixed;top: 0px;left: 0px;z-index: 10010">
-    <div class="sl-flex-row-center-space-between " style="background-color: red;height: 3rem;padding-left: 0.8rem;">
-        <a onclick="goBack()"><img src="../assets/images/back.png" alt="" style="width: 1.5rem;height: 1.5rem;"></a>
-        <!--<div class="sl-flex-row-center-flex-end"><i class="am-icon-search" style="margin-right: 0.8rem;" onclick="insertSearch()"></i>-->
-            <!--<a href="strong-big-input.html"  class="sl-margin-right-1rem sl-font-color-white"><i class="am-icon-plus"></i></a>-->
-        <!--</div>-->
+<div class="top-div" style="width: 100%;position:fixed;top: 0px;left: 0px;z-index: 10001">
+    <div class="sl-flex-row-center-flex-start " style="background-color: red;height: 3rem;padding-left: 0.8rem;">
+        <img src="../assets/images/back.png" alt="" style="width: 1.5rem;height: 1.5rem;" onclick="goBack()">
+        <div style="color: white;" class="title">福利清单</div>
     </div>
 </div>
-<!--"-->
 <div style="margin-top: 3.2rem;">
-    <div data-am-widget="tabs" class="am-tabs am-tabs-default">
-        <!--<div class="sl-border-bottom-1px-solid-E6E6E6 search-div" style="background-color: #E3E3E3;padding: .5rem 1rem">-->
-            <!--<div class="sl-background-color-white  sl-flex-row-center-center sl-padding-2px-10px" style="border-radius: 3rem;">-->
-                <!--<input type="text" placeholder="请输入关键字" id="search" oninput="inputVal()" style="width: 90%;border: 0px;">-->
-            <!--</div>-->
-        <!--</div>-->
-        <ul class="am-tabs-nav am-cf" >
-            <li class="am-active"><a href="[data-tab-panel-0]">物品清单</a></li>
-            <li class=""><a href="[data-tab-panel-1]">兑换记录</a></li>
-            <!--<li>-->
-                <!--<div class="am-dropdown" data-am-dropdown>-->
-                    <!--<button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>排序<span class="am-icon-caret-down"></span></button>-->
-                    <!--<ul class="am-dropdown-content" style="min-width: 5rem;">-->
-                        <!--<li><a href="#" style="line-height: 1rem;">标题</a></li>-->
-                        <!--<li class="am-active" ><a href="#" style="line-height: 1rem;">时间</a></li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-            <!--</li>-->
-        </ul>
-        <div class="am-tabs-bd">
-            <div data-tab-panel-0 class="am-tab-panel am-active" style="padding-right: 0rem;padding-left: 0rem;">
-                        <ul class="am-avg-sm-2" style="background-color: white;" id="list">
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">8</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">21</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">21</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">60</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">10</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">70</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">10</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">20</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">40</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">20</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">10</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">20</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">10</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">20</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">10</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">20</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li style="padding: 0.2rem;">
-                                <div style="border: 2px solid #D1D1D1;padding: 0.2rem">
-                                    <img src="../assets/images/high.jpg" alt="" style="width: 100%;height: 100%;">
-                                    <span class="am-text-truncate">数码相机</span><br>
-                                    <span>库存：</span><b style="color: red;">10</b>
-                                    <div class="sl-flex-row-center-space-between">
-                                        <div class="sl-flex-row-center-flex-start">
-                                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
-                                            <span style="color: red;">1</span>
-                                            <span> &nbsp;积分</span>
-                                        </div>
-                                        <button >兑换</button>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-            </div>
-            <div data-tab-panel-1 class="am-tab-panel" style="padding-right: 0rem;padding-left: 0rem;">
-                <ul class="am-list">
-                    <li>
-                        <div style="margin:.5rem">
-                            <b>商品名称：</b><span>汽车</span><br>
-                            <b>商品状态：</b><em>待发货</em>
+    <ul class="am-avg-sm-2" style="background-color: white;" id="list">
+        <li data-fruit-type="0">
+            <div class="sl-margin-04rem-04rem-04rem-08rem sl-border-1px-solid-D3D3D3">
+                <div class="sl-background-color-F6F6F6 sl-flex-row-center-center sl-padding-1rem">
+                    <img src="../assets/images/fruits/pg/slider/pg_2.jpg" alt="" style="width: 100%;height: 100%;">
+                </div>
+                <div class="sl-border">
+                    <div class="am-text-truncate">智利嘎啦果6个115g以上/个</div>
+                    <div class="sl-flex-row-center-space-between data-JF-KC">
+                        <div class="sl-flex-row-center-flex-start">
+                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
+                            <span style="color: red;">120</span>
+                            <span> &nbsp;积分</span>
                         </div>
-                    </li>
-                    <li><a href="#">我把最深沉的秘密放在那里。</a></li>
-                    <li><a href="#">你不懂我，我不怪你。</a></li>
-                    <li><a href="#">每个人都有一道伤口， 或深或浅，盖上布，以为不存在。</a></li>
-                </ul>
+                        <div>
+                            <span>库存:</span><b style="color: red;">100</b>
+                        </div>
+                    </div>
+                    <div class="sl-flex-row-center-space-between">
+                        <div style="font-size: .6rem;">
+                            <span>由</span><b style="color: #44b549;">易批购商城</b><span>提供</span>
+                        </div>
+                        <div>
+                            <button class="ls-button">兑换</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    </div>
+        </li>
+        <li data-fruit-type="1">
+            <div class="sl-margin-04rem-08rem-04rem-04rem sl-border-1px-solid-D3D3D3">
+                <div class="sl-background-color-F6F6F6 sl-flex-row-center-center sl-padding-1rem">
+                    <img src="../assets/images/fruits/gng/slider/gng_2.jpg" alt="" style="width: 100%;height: 100%;">
+                </div>
+                <div class="sl-border">
+                    <div class="am-text-truncate">吉林长白山菇娘果500g</div>
+                    <div class="sl-flex-row-center-space-between data-JF-KC">
+                        <div class="sl-flex-row-center-flex-start">
+                            <img src="../assets/images/money.png" alt="" style="width: 1rem;height: 1rem;">
+                            <span style="color: red;">150</span>
+                            <span> &nbsp;积分</span>
+                        </div>
+                        <div>
+                            <span>库存:</span><b style="color: red;">60</b>
+                        </div>
+                    </div>
+                    <div class="sl-flex-row-center-space-between">
+                        <div style="font-size: .6rem;">
+                            <span>由</span><b style="color: #44b549;">易批购商城</b><span>提供</span>
+                        </div>
+                        <div>
+                            <button class="ls-button">兑换</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">请输入购买的数量</div>
-        <div class="am-modal-bd sl-flex-column-center-center">
-            <table>
-                <tr>
-                    <td style="width: 40%;">您的积分</td>
-                    <td style="width: 30%;">300</td>
-                    <td style="width: 30%;">积分</td>
-                </tr>
-                <tr>
-                    <td>兑换价格</td>
-                    <td></td>
-                    <td>积分</td>
-                </tr>
-                <tr>
-                    <td>库存</td>
-                    <td style="color: red;"><b></b></td>
-                    <td>个</td>
-                </tr>
-                <tr>
-                    <td>可兑换数</td>
-                    <td style="color: red;"><b></b></td>
-                    <td>个</td>
-                </tr>
-                <tr>
-                    <td>数量</td>
-                    <td colspan="2"><input type="number" oninput="checkVal(this)" class="am-modal-prompt-input"></td>
-                </tr>
-            </table>
-            <!--<div class="sl-flex-row-center-flex-start">-->
-                <!---->
-                <!--<span>你的积分&nbsp;:&nbsp;</span><b>300</b><span>&nbsp;积分</span>-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<span>商品价格&nbsp;:&nbsp;</span><b>30</b><span>&nbsp;积分</span>-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<span>可以购买的数量&nbsp;:&nbsp;</span><b style="color: red;">10</b><span>&nbsp;个</span>-->
-            <!--</div>-->
-            <!--<div class="sl-flex-row-center-space-between">-->
-                <!--<span>数量:</span><input type="number" oninput="checkVal(this)" class="am-modal-prompt-input">-->
-            <!--</div>-->
-
+        <div class="am-modal-hd" style="border-bottom: 1px solid #CACACA;">兑换信息</div>
+        <div class="sl-flex-column-flex-start-center">
+            <header class="sl-header">兑换方式：积分兑换</header>
+            <div class="am-modal-bd ">
+                <table>
+                    <tr>
+                        <td style="width: 40%;">您的积分</td>
+                        <td style="width: 30%;">300</td>
+                        <td style="width: 30%;">积分</td>
+                    </tr>
+                    <tr>
+                        <td>兑换价格</td>
+                        <td></td>
+                        <td>积分</td>
+                    </tr>
+                    <tr>
+                        <td>库存</td>
+                        <td style="color: red;"><b></b></td>
+                        <td>个</td>
+                    </tr>
+                    <tr>
+                        <td>可兑换数</td>
+                        <td style="color: red;"><b></b></td>
+                        <td>个</td>
+                    </tr>
+                    <tr>
+                        <td>数量</td>
+                        <td colspan="2"><input type="number" oninput="checkVal(this)" class="am-modal-prompt-input"></td>
+                    </tr>
+                </table>
+            </div>
+            <header class="sl-header">兑换方式：兑换码兑换</header>
+            <div class="am-modal-bd" style="width: 100%;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 40%;"></td>
+                        <td style="width: 30%;"></td>
+                        <td style="width: 30%;"></td>
+                    </tr>
+                    <tr>
+                        <td >兑换码</td>
+                        <td colspan="2"><input type="number" class="am-modal-prompt-input" ></td>
+                    </tr>
+                </table>
+            </div>
+            <header class="sl-header">兑换方式：二维码兑换</header>
+            <div class="am-modal-bd" style="width: 100%;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 40%;"></td>
+                        <td style="width: 30%;"></td>
+                        <td style="width: 30%;"></td>
+                    </tr>
+                    <tr>
+                        <td >兑换码</td>
+                        <td colspan="2"><input type="number" class="am-modal-prompt-input" ></td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
@@ -299,7 +198,35 @@
    </div>
 </div>
 
-
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default " style="border-top: 2px solid #E5E5E5;">
+    <ul class=" am-navbar-nav am-cf am-avg-sm-4 ">
+        <li >
+            <a href="#" class="">
+                <img src="../assets/images/bottomNavClick/首页.png" alt="">
+                <span class="am-navbar-label  sl-font-color-red">首页</span>
+            </a>
+        </li>
+        <!--<li >-->
+            <!--<a href="" class="">-->
+                <!--<img src="../assets/images/bottomNav/搜索.png" alt="">-->
+                <!--<span class="am-navbar-label sl-icon-color-6D6D6D">搜索</span>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--<li data-am-navbar-share>-->
+            <!--<a href="" class="">-->
+                <!--<img src="../assets/images/bottomNav/购物车.png" alt="">-->
+                <!--<span class="am-navbar-label sl-icon-color-6D6D6D">购物车</span>-->
+            <!--</a>-->
+        <!--</li>-->
+        <li >
+            <a href="my.html" class="">
+                <!--<i class="fa fa-user-o sl-icon-color-6D6D6D"></i>-->
+                <img src="../assets/images/bottomNav/我的.png" alt="">
+                <span class="am-navbar-label sl-icon-color-6D6D6D">我的</span>
+            </a>
+        </li>
+    </ul>
+</div>
 
 
 
@@ -327,9 +254,12 @@
     //点击兑换按钮
     $(function () {
         $('button').on('click', function () {
-            var price = parseInt($(this).prev().find('span:first').html());//获取商品价格
-            numKC =  parseInt($(this).parent().prev().html());
-           var $tr = $('table tr');
+            var  price= $(this).parent().parent().prev().find('span:eq(0)').html();
+            numKC =  $(this).parent().parent().prev().find('b').html();
+
+//            var price = parseInt($(this).prev().find('span:first').html());//获取商品价格
+//            numKC =  parseInt($(this).parent().prev().html());
+           var $tr = $('table:eq(0) tr');
             $tr.eq(1).children('td').eq(1).html(price);//将商品价格放入到td中
             var yourJF = parseInt($tr.eq(0).children('td').eq(1).html());//你的所有积分
             num = parseInt(yourJF / price);
@@ -344,9 +274,9 @@
             $('#my-prompt').modal({
                 relatedTarget: this,
                 onConfirm: function(e) {
-                    var tempNum =parseInt($.trim(e.data)) ;
-                    console.log(tempNum);
-
+                    var tempNum =parseInt($.trim(e.data[0])) ;
+                    var tempNum1 =parseInt($.trim(e.data[1])) ;
+                    console.log("f:"+tempNum+'.s:'+tempNum1);
                     if(isNaN(tempNum)){//先判断是不是数字
                         rem.alertInfoByState('兑换失败',1)
                     }else{
@@ -399,14 +329,31 @@
         if(cX >= bX && cX <= bX + bW && cY >= bY && cY <= bY + bH){
 
         }else{
-            var KC = $(this).find('b').html();
-            var price =  $(this).find('b').next().find('span:first').html();
+
+            //图片信息
+//            var $img = $(this).children('div').children('div:eq(0)').find('img');
+//            var s = $img.attr('src');
+//            console.log('src:'+s)
+//            var i = s.lastIndexOf('.');
+//            console.log("I:"+i);
+
+            //积分信息
+            var  price= $(this).find('div.data-JF-KC').find('span:eq(0)').html();
+            var KC =  $(this).find('div.data-JF-KC').find('b').html();
             var yourJF = 300;
             console.log("P:"+price+"KC:"+KC);
             sessionStorage.setItem('yourJF',yourJF);
             sessionStorage.setItem('price',price);
             sessionStorage.setItem('KC',KC);
-            location.href = 'commodityDetail.html'
+            var t = $(this).data('fruitType');
+            console.log("t:"+t);
+            console.log(typeof t);
+            if(t === 0){
+                location.href = 'apple.html'
+            }else if(t === 1){
+                location.href = 'girlFruit.html'
+            }
+//            location.href = 'commodityDetail.html'
         }
 //        console.log("cx:"+cX+",cy:"+cY+',bx:'+bX+',by:'+bY+',bw:'+bW+",bh:"+bH);
 //            $(this)
@@ -419,7 +366,10 @@
 //        alert('sx'+e.screenX+',sy:'+e.screenY)
 //    });
 
-
+    //标题文字居中
+    $(function () {
+        rem.titleCenter();
+    });
     //
     function goBack() {
         history.back();

@@ -391,7 +391,8 @@ html {
 body {
   position: relative;
   background: #fff;
-  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+  /*font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;*/
+  font-family:  "Microsoft YaHei";
   font-weight: normal;
   line-height: 1.6;
   color: #333333;
@@ -9060,10 +9061,13 @@ TODO:
   vertical-align: middle;
   margin-left: auto;
   margin-right: auto;
-  width: 270px;
+  width: 80%;
   max-width: 100%;
   border-radius: 0;
   background: #f8f8f8;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  border-radius: 0.8rem;
   /*@media @large-up {
     width: @modal-lg;
     margin-left: -@modal-lg/2;
@@ -9088,9 +9092,9 @@ TODO:
   right: 4px;
 }
 .am-modal-bd {
-  padding: 15px 10px;
+  padding: 0.6rem 0.5rem;
   text-align: center;
-  border-bottom: 1px solid #dedede;
+  border-bottom: 1px solid #CACACA;
   border-radius: 2px 2px 0 0;
 }
 .am-modal-bd + .am-modal-bd {
