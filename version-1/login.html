@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>登陆</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <!-- Amaze UI CSS -->
+    <link rel="stylesheet" href="../assets/css/amazeui.css">
+    <link rel="stylesheet" href="../assets/css/sl.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/amazeui.js"></script>
+
+</head>
+<body>
+<div class="am-g sl-border-bottom-1px-solid-D3D3D3">
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 sl-background-color-white">
+        <a href="JavaScript:history.go(-1)">
+            <i class="am-icon-close am-icon-md sl-icon-color-CACACA" style="font-weight:bolder"></i>
+        </a>
+
+
+    </div>
+</div>
+<div class="sl-flex-row-center-center sl-margin-30px-0px">
+    <img src="../assets/images/car.png" style="width: 200px; height: 200px;;" alt="">
+</div>
+<form action="action" method="POST" role="form" class="am-form">
+    <div class="am-input-group sl-margin-10px-20px">
+        <span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
+        <input type="text" class="am-form-field" placeholder="Username">
+    </div>
+
+    <div class="am-input-group sl-margin-10px-20px sl-m">
+        <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
+        <input type="text" class="am-form-field" placeholder="Password">
+    </div>
+    <div class="sl-flex-row-center-center   ">
+        <button type="submit" class="am-btn sl-background-color-FFCC00 sl-font-color-white sl-border-radius-1000px" style="width: 60%" id="login">登&nbsp;&nbsp;陆</button>
+    </div>
+</form>
+<div class="am-g sl-font-color-gray sl-font-size-14px sl-margin-top-10px">
+    <div class="am-u-sm-6 am-u-md-6 am-u-lg-6 sl-flex-row-center-flex-end">
+       <a href="forget-pasword.html">忘记密码</a>
+    </div>
+    <div class="am-u-sm-6 am-u-md-6 am-u-lg-6">
+        <a href="quick-login.html">快速注册</a>
+    </div>
+</div>
+
+</body>
+<script>
+    $('#login').click(function () {
+        window.history.back(-1);
+    })
+</script>
+</html>

@@ -9079,8 +9079,8 @@ TODO:
   }
 }
 .am-modal-hd {
-  padding: 15px 10px 5px 10px;
-  font-size: 1.8rem;
+  padding: .5rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 .am-modal-hd + .am-modal-bd {
@@ -9118,7 +9118,7 @@ TODO:
   border-color: #d6d6d6;
 }
 .am-modal-footer {
-  height: 44px;
+  height: 2.8rem;
   overflow: hidden;
   display: table;
   width: 100%;
@@ -9127,11 +9127,11 @@ TODO:
 .am-modal-btn {
   display: table-cell !important;
   padding: 0 5px;
-  height: 44px;
+  height: 2.8rem;
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
-  font-size: 1.6rem;
-  line-height: 44px;
+  font-size: 1.2rem;
+  line-height: 2.8rem;
   text-align: center;
   color: #0e90d2;
   display: block;
