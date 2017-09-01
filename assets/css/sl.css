@@ -111,6 +111,9 @@
 .sl-margin-left{
     margin-left: 10px;
 }
+.sl-margin-left-0{
+    margin-left: 10px;
+}
 .sl-margin-right-5px{
     margin-right: 5px;
 }
@@ -135,12 +138,59 @@
 .sl-margin-0px-10px{
     margin: 0px 10px;
 }
+.sl-margin-0rem-08rem{
+    margin: 0rem .8rem;
+}
+.sl-margin-08rem-0rem{
+    margin: .8rem 0rem;
+}
+.sl-margin-02rem-0rem{
+    margin: .2rem 0rem;
+}
+.sl-padding-0rem-08rem{
+    padding: 0rem .8rem;
+}
+.sl-padding-08rem-04rem{
+    padding: .8rem .4rem;
+}
+/*.sl-padding-08rem-08rem{*/
+    /*padding: .8rem .8rem;*/
+/*}*/
+.sl-padding-08rem{
+    padding: .8rem;
+}
+.sl-padding-04rem{
+    padding: .4rem;
+}
+.sl-border-radius-08rem-08rem-0rem-0rem{
+     border-radius: .5rem .5rem 0rem 0rem;
+ }
+.sl-border-radius-0rem-0rem-08rem-08rem{
+    border-radius: 0rem 0rem .5rem .5rem;
+ }
+.sl-border-radius-08rem{
+    border-radius: .5rem;
+}
+.sl-margin-08rem-08rem-0rem-08rem{
+    margin: .8rem .8rem 0rem .8rem;
+}
+.sl-margin-left-08rem{
+     margin-left: .8rem ;
+ }
+.sl-margin-left-02rem{
+    margin-left: .2rem ;
+}
+.sl-margin-right-08rem{
+    margin-right: .8rem ;
+}
+
 .sl-margin-0px-10px-10px-10px{
     margin: 0px 10px 10px 10px;
 }
 .sl-margin-10px-10px{
     margin: 10px 10px;
 }
+.sl-border-radius-
 .sl-margin-10px-20px{
     margin: 10px 20px;
 }
@@ -199,8 +249,14 @@
 .sl-margin-04rem-08rem-04rem-04rem{
     margin: .4rem .8rem .4rem .4rem;
 }
-.sl-padding-02rem-08rem{
-    padding: .2rem .8rem;
+.sl-padding-02rem-0rem{
+    padding: .2rem 0rem;
+}
+.sl-padding-top-04rem{
+     padding-top: .4rem;
+}
+.sl-padding-top-02rem{
+    padding-top: .2rem;
 }
 .sl-flex-row-center-center{
     display: flex;
@@ -267,6 +323,9 @@
 .sl-border-right-1px-solid-white{
     border-right:1px solid #FFFFFF;
 }
+.sl-border-top-2px-dashed-gray{
+    border-top:2px dashed #AEAEAE;
+}
 .sl-padding-10px-0px{
     padding: 10px 0px;
 }
@@ -282,6 +341,9 @@
 }
 .sl-margin-top-20px{
     margin-top: 20px;
+}
+.sl-margin-top-3rem{
+    margin-top: 3rem;
 }
 .sl-margin-top-10px{
     margin-top: 10px;
@@ -351,4 +413,14 @@
     width: 33%;
     text-align: right;
     margin-right:0.4rem;
+}
+.sl-bottomNav{
+    width: 100%;
+    background-color: red;
+    text-align: center;
+    color: white;
+    padding: .4rem
+}
+.sl-border-shadow{
+   box-shadow: none;
 }

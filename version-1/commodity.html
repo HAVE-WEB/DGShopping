@@ -189,7 +189,70 @@
         </div>
     </div>
 </div>
-
+<div class="sl-flex-column-center-center" style="width: 100%;background-color: white" id="translate">
+    <div style="width: 100%;text-align: center;">商品参数</div>
+    <!--overflow: scroll;height: 12rem-->
+    <div class="sl-flex-column-flex-start-center">
+        <header class="sl-header">兑换方式：积分兑换</header>
+        <div class="am-modal-bd ">
+            <table>
+                <tr>
+                    <td style="width: 40%;">您的积分</td>
+                    <td style="width: 30%;">300</td>
+                    <td style="width: 30%;">积分</td>
+                </tr>
+                <tr>
+                    <td>兑换价格</td>
+                    <td></td>
+                    <td>积分</td>
+                </tr>
+                <tr>
+                    <td>库存</td>
+                    <td style="color: red;"><b></b></td>
+                    <td>个</td>
+                </tr>
+                <tr>
+                    <td>可兑换数</td>
+                    <td style="color: red;"><b></b></td>
+                    <td>个</td>
+                </tr>
+                <tr>
+                    <td>数量</td>
+                    <td colspan="2"><input type="number" oninput="checkVal(this)" class="am-modal-prompt-input"></td>
+                </tr>
+            </table>
+        </div>
+        <header class="sl-header">兑换方式：兑换码兑换</header>
+        <div class="am-modal-bd" style="width: 100%;">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 40%;"></td>
+                    <td style="width: 30%;"></td>
+                    <td style="width: 30%;"></td>
+                </tr>
+                <tr>
+                    <td >兑换码</td>
+                    <td colspan="2"><input type="number" class="am-modal-prompt-input" ></td>
+                </tr>
+            </table>
+        </div>
+        <header class="sl-header">兑换方式：二维码兑换</header>
+        <div class="am-modal-bd" style="width: 100%;">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 40%;"></td>
+                    <td style="width: 30%;"></td>
+                    <td style="width: 30%;"></td>
+                </tr>
+                <tr>
+                    <td >兑换码</td>
+                    <td colspan="2"><input type="number" class="am-modal-prompt-input" ></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="background-color: red;color: white;width: 100%;text-align: center;padding: 0.3rem;" onclick="hideTied()">完成</div>
+</div>
 
 
 <div class="sl-flex-row-center-space-around sl-padding-15px-0px-5px-0px"  style="position: fixed;z-index: 1001;top: 80%;left: 80%;display: none" id="up">
@@ -227,7 +290,7 @@
         </li>
     </ul>
 </div>
-
+<div id="grayTier"></div>
 
 
 
@@ -241,6 +304,7 @@
     var rem = new Rem();
     var num = 0;
     var numKC = 0;
+    var wH = screen.height;
     //回顶部
     $("#up").click(function () {
         $('html, body').animate({scrollTop: 0}, '500');
@@ -252,43 +316,49 @@
     })
 
     //点击兑换按钮
-    $(function () {
-        $('button').on('click', function () {
-            var  price= $(this).parent().parent().prev().find('span:eq(0)').html();
-            numKC =  $(this).parent().parent().prev().find('b').html();
-
-//            var price = parseInt($(this).prev().find('span:first').html());//获取商品价格
-//            numKC =  parseInt($(this).parent().prev().html());
-           var $tr = $('table:eq(0) tr');
-            $tr.eq(1).children('td').eq(1).html(price);//将商品价格放入到td中
-            var yourJF = parseInt($tr.eq(0).children('td').eq(1).html());//你的所有积分
-            num = parseInt(yourJF / price);
-            $tr.eq(2).children('td').eq(1).find('b').html(numKC);//你的积分可以购买的个数
-            $tr.eq(3).children('td').eq(1).find('b').html(num)//库存
-            if(num > numKC){
-                $tr.eq(4).children('td').eq(1).find('input').attr('max',numKC);
-            } else {
-                $tr.eq(4).children('td').eq(1).find('input').attr('max',num);
-            }
-
-            $('#my-prompt').modal({
-                relatedTarget: this,
-                onConfirm: function(e) {
-                    var tempNum =parseInt($.trim(e.data[0])) ;
-                    var tempNum1 =parseInt($.trim(e.data[1])) ;
-                    console.log("f:"+tempNum+'.s:'+tempNum1);
-                    if(isNaN(tempNum)){//先判断是不是数字
-                        rem.alertInfoByState('兑换失败',1)
-                    }else{
-                        rem.alertInfoByState('兑换成功',0)
-                    }
-                },
-                onCancel: function(e) {
-//                    alert('不想说!');
-                }
-            });
-        })
-    });
+//    $(function () {
+//        $('button').on('click', function () {
+//            var  price= $(this).parent().parent().prev().find('span:eq(0)').html();
+//            numKC =  $(this).parent().parent().prev().find('b').html();
+//
+////            var price = parseInt($(this).prev().find('span:first').html());//获取商品价格
+////            numKC =  parseInt($(this).parent().prev().html());
+//           var $tr = $('table:eq(0) tr');
+//            $tr.eq(1).children('td').eq(1).html(price);//将商品价格放入到td中
+//            var yourJF = parseInt($tr.eq(0).children('td').eq(1).html());//你的所有积分
+//            num = parseInt(yourJF / price);
+//            $tr.eq(2).children('td').eq(1).find('b').html(numKC);//你的积分可以购买的个数
+//            $tr.eq(3).children('td').eq(1).find('b').html(num)//库存
+//            if(num > numKC){
+//                $tr.eq(4).children('td').eq(1).find('input').attr('max',numKC);
+//            } else {
+//                $tr.eq(4).children('td').eq(1).find('input').attr('max',num);
+//            }
+//
+//            var dH = $('#translate').outerHeight();
+//            $('#grayTier').show();
+//            $('#translate').animate({
+//                top: wH-dH
+//            },300);
+//
+////            $('#my-prompt').modal({
+////                relatedTarget: this,
+////                onConfirm: function(e) {
+////                    var tempNum =parseInt($.trim(e.data[0])) ;
+////                    var tempNum1 =parseInt($.trim(e.data[1])) ;
+////                    console.log("f:"+tempNum+'.s:'+tempNum1);
+////                    if(isNaN(tempNum)){//先判断是不是数字
+////                        rem.alertInfoByState('兑换失败',1)
+////                    }else{
+////                        rem.alertInfoByState('兑换成功',0)
+////                    }
+////                },
+////                onCancel: function(e) {
+//////                    alert('不想说!');
+////                }
+////            });
+//        })
+//    });
     //时时刻刻检查输入框中的值
     function checkVal(self) {
         var flag = false;
@@ -327,7 +397,11 @@
         var bY = $b.offset().top;//元素对象相对于文档对象的顶部边缘的位置
 
         if(cX >= bX && cX <= bX + bW && cY >= bY && cY <= bY + bH){
-
+            var dH = $('#translate').outerHeight();
+            $('#grayTier').show();
+            $('#translate').animate({
+                top: wH-dH
+            },300);
         }else{
 
             //图片信息
@@ -370,9 +444,52 @@
     $(function () {
         rem.titleCenter();
     });
-    //
+    //退回
     function goBack() {
         history.back();
-    }
+    };
 
+    //将商品信息隐藏
+    $(function () {
+        $("#translate").css({
+            position: 'fixed',
+            top: wH,
+            left: 0,
+        }).css('z-index',10005)
+    });
+    //灰色一层
+    $(function () {
+        var wW = screen.width;
+        $('#grayTier').css({
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: wW,
+            height: wH,
+            backgroundColor: '#A5A4A5',
+            zIndex: 10002,
+            display: 'none',
+            opacity: 0.5
+
+        })
+    });
+    //点击灰色层隐藏
+    $('#grayTier').on('click',function () {
+        hideTied();
+    }) ;
+    //点击商品信息
+    $('#commodityInfo').click(function () {
+        var dH = $('#translate').outerHeight();
+        $('#grayTier').show();
+        $('#translate').animate({
+            top: wH-dH
+        },300);
+    });
+    //隐藏灰色层和商品信息层
+    function hideTied() {
+        $('#grayTier').hide();
+        $('#translate').animate({
+            top: wH
+        },300);
+    }
 </script>
