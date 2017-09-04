@@ -38,7 +38,7 @@
     <script src="../assets/js/myFirst.js"></script>
     <style>
         .sl-background-color{
-            background-color: #FF3366;
+            background-color: red;
 
         }
         .sl-background-color-height-common{
@@ -54,10 +54,10 @@
     </style>
 </head>
 <body style="background-color: #EEEEF3">
-<div data-am-sticky class="sl-background-color sl-background-color-height-common sl-grid-flex-row-around">
-    <!--<i class="am-icon-gear am-icon-sm  sl-icon-size-color sl-margin-left"></i>-->
-    <!--<i class="am-icon-comment-o am-icon-sm  sl-icon-size-color sl-margin-right"></i>-->
-</div>
+<!--<div data-am-sticky class="sl-background-color-red sl-background-color-height-common sl-grid-flex-row-around">-->
+    <!--&lt;!&ndash;<i class="am-icon-gear am-icon-sm  sl-icon-size-color sl-margin-left"></i>&ndash;&gt;-->
+    <!--&lt;!&ndash;<i class="am-icon-comment-o am-icon-sm  sl-icon-size-color sl-margin-right"></i>&ndash;&gt;-->
+<!--</div>-->
 
 <!--登录成功后的现实的个人信息-->
 <!--<div class="am-g sl-background-color sl-background-color-height-common-2 sl-grid-row-center sl-font-color-white">-->
@@ -77,7 +77,7 @@
         <!--<i class="am-icon-angle-right am-icon-sm sl-margin-left-5px" ></i>-->
     <!--</div>-->
 <!--</div>-->
-<div class="am-g sl-background-color sl-background-color-height-common-2 sl-grid-row-center sl-font-color-white sl-flex-row-center-flex-start">
+<div class="am-g sl-background-color-red sl-background-color-height-common-2 sl-grid-row-center sl-font-color-white sl-flex-row-center-flex-start">
     <div class="am-u-sm-3 am-u-md-3 am-u-lg-3 sl-padding-0px sl-grid-row-center">
         <img src="../assets/images/self_info.png" class="am-img-responsive" style="width: 60px;height: 60px;padding: auto auto"/>
     </div>
@@ -94,21 +94,21 @@
     <li style="">
         <span>我的订单</span>
     </li>
-    <li >
+    <li data-index="0">
         <div class="sl-flex-row-center-flex-end sl-font-size-14px">
             <span class="sl-margin-right-5px">历史兑换</span>
             <div><img src="../assets/images/方向右.png" alt="" style="width: 1rem;height: 1rem;"></div>
         </div>
     </li>
 </ul>
-<ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2 sl-background-color-white sl-margin-0rem-08rem sl-border-radius-0rem-0rem-08rem-08rem">
-    <li>
+<ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2 sl-background-color-white sl-margin-0rem-08rem sl-border-radius-0rem-0rem-08rem-08rem" id="boughtItem">
+    <li data-index="1">
         <div class="sl-flex-column-center-center sl-padding-10px-0px">
            <i class="am-icon-paypal sl-icon-color-red am-icon-sm"></i>
             <span class="sl-font-color-gray sl-font-size-14px">待发货</span>
         </div>
     </li>
-    <li>
+    <li data-index="2">
         <div class="sl-flex-column-center-center  sl-padding-10px-0px">
            <i class="am-icon-truck sl-icon-color-red am-icon-sm"></i>
             <span class="sl-font-color-gray sl-font-size-14px">待收货</span>
@@ -124,7 +124,7 @@
     </li>
 </ul>
 
-<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default " style="border-top: 2px solid #E5E5E5;">
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default sl-navbar" style="border-top: 2px solid #E5E5E5;">
     <ul class=" am-navbar-nav am-cf am-avg-sm-4 ">
         <li >
             <a href="commodity.html" class="">
@@ -148,7 +148,7 @@
             <a href="#" class="">
                 <!--<i class="fa fa-user-o sl-icon-color-6D6D6D"></i>-->
                 <img src="../assets/images/bottomNavClick/我的.png" alt="">
-                <span class="am-navbar-label sl-font-color-red">我的</span>
+                <span class="am-navbar-label sl-color-red">我的</span>
             </a>
         </li>
     </ul>
@@ -158,11 +158,22 @@
     //全局变量
     var rem = new Rem();
     
-    $(function () {
-        
-    })
+//    $(function () {
+//
+//    })
     $('#address').click(function () {
         location.href = 'addressList.html'
+    })
+    $('#boughtItem li').click(function () {
+        var index = $(this).data('index');
+        sessionStorage.setItem('index',index);
+        location.href = 'boughtList.html'
+
+    });
+    $('li[data-index="0"]').click(function () {
+        var index = $(this).data('index');
+        sessionStorage.setItem('index',index);
+        location.href = 'boughtList.html'
     })
 </script>
 </html>

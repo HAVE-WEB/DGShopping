@@ -10455,11 +10455,11 @@ label.am-radio {
 }
 .am-ucheck-checkbox:hover:not(.am-nohover):not(:disabled) + .am-ucheck-icons,
 .am-ucheck-radio:hover:not(.am-nohover):not(:disabled) + .am-ucheck-icons {
-  color: #0e90d2;
+  color: red;
 }
 .am-ucheck-checkbox:checked + .am-ucheck-icons,
 .am-ucheck-radio:checked + .am-ucheck-icons {
-  color: #0e90d2;
+  color: red;
 }
 .am-ucheck-checkbox:checked + .am-ucheck-icons .am-icon-unchecked,
 .am-ucheck-radio:checked + .am-ucheck-icons .am-icon-unchecked {

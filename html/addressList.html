@@ -64,8 +64,8 @@
         <div style="color: white;" class="title">地址列表</div>
     </div>
 </div>
-<div style="margin-top: 3rem;">
-    <ul class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-08rem-08rem-0rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" style="margin-top: 3.8rem;">
+<div style="padding-top: 3.8rem;">
+    <ul data-index="0" class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-0rem-08rem-08rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" >
         <li style="width: 100%;">
             <div class="sl-flex-row-center-space-between" >
                 <span class=" ">姓名1</span>
@@ -77,7 +77,7 @@
             <div class="sl-flex-row-center-space-between sl-margin-02rem-0rem sl-border-top-2px-dashed-gray sl-padding-top-02rem" >
                 <div class="sl-flex-row-center-center">
                     <!--<input type="radio" name="address" style="margin: 0rem;padding: 0rem;outline: 0px">-->
-                    <label class="am-radio " style="margin-bottom: 0rem;margin-top: .3rem;">
+                    <label class="am-radio am-nohover" style="margin-bottom: 0rem;margin-top: .3rem;">
                         <input type="radio" name="radio1" value="" checked="checked" data-am-ucheck checked>
                         <span class="" style="font-size: 0.7rem">设为默认地址</span>
                     </label>
@@ -91,7 +91,7 @@
             </div>
         </li>
     </ul>
-    <ul class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-08rem-08rem-0rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" >
+    <ul data-index="1" class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-0rem-08rem-08rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" >
         <li style="width: 100%;">
             <div class="sl-flex-row-center-space-between" >
                 <span class=" ">姓名2</span>
@@ -117,7 +117,7 @@
             </div>
         </li>
     </ul>
-    <ul class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-08rem-08rem-0rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" >
+    <ul data-index="2" class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-0rem-08rem-08rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" >
         <li style="width: 100%;">
             <div class="sl-flex-row-center-space-between" >
                 <span class=" ">姓名3</span>
@@ -143,8 +143,34 @@
             </div>
         </li>
     </ul>
+    <ul data-index="3" class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-0rem-08rem-08rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" >
+        <li style="width: 100%;">
+            <div class="sl-flex-row-center-space-between" >
+                <span class=" ">姓名4</span>
+                <div>17185160021</div>
+            </div>
+            <div class="sl-flex-row-center-space-between sl-margin-02rem-0rem" >
+                <div class=" " style="font-size: 0.7rem"><span>上海市</span><span>上海市</span><span>杨浦区</span><span>平凉路1500号沪东工人文化宫2楼407范在企业管理</span></div>
+            </div>
+            <div class="sl-flex-row-center-space-between sl-margin-02rem-0rem sl-border-top-2px-dashed-gray sl-padding-top-02rem" >
+                <div class="sl-flex-row-center-center">
+                    <!--<input type="radio" name="address" style="margin: 0rem;padding: 0rem;outline: 0px">-->
+                    <label class="am-radio " style="margin-bottom: 0rem;margin-top: .3rem;">
+                        <input type="radio" name="radio1" value="" data-am-ucheck>
+                        <span class="" style="font-size: 0.7rem">设为默认地址</span>
+                    </label>
+                    <!--<span class="sl-margin-left-02rem " style="font-size: 0.7rem">设为默认地址</span>-->
+                </div>
+                <div >
+                    <button class="sl-background-color-white sl-padding-02rem-08rem sl-border-1px-solid-D3D3D3 sl-margin-right-08rem edit">编辑</button>
+                    <button class="sl-background-color-white sl-padding-02rem-08rem sl-border-1px-solid-D3D3D3 del">删除</button>
+                </div>
+
+            </div>
+        </li>
+    </ul>
 </div>
-<div id="bottomNav" style="width: 100%;" class="sl-flex-row-center-space-between">
+<div id="bottomNav" style="width: 100%;" class="sl-flex-row-center-space-between sl-navbar">
     <div class="sl-bottomNav" >
         <span>新增收货地址</span>
     </div>
@@ -299,20 +325,33 @@
     $(function () {
         rem.titleCenter();
         rem.bottomNavFixed($('#bottomNav'));
+        $('#bottomNav').prev().css('padding-bottom','3rem');
     });
     //
     function goBack() {
         history.back();
     }
-
+    var flag = false;
     //删除地址
     $('button.del').click(function () {
-//        var self = this;
         var $ul = $(this).parents('ul');
-        console.log($ul);
+        flag =  $ul.find('label').hasClass('am-nohover');
+        console.log($ul.find('label')[0]);
+        console.log("flag:"+flag);
+
         $('#my-confirm').modal({
-            relatedTarget: this,
+            relatedTarget: this,//这个this代表的是$('button.del')
             onConfirm: function(options) {
+                var $ul = $(this.relatedTarget).parents('ul');//这个this代表的是$('#my-confirm')对象
+                var $sibUl = $ul.siblings('ul');
+//                console.log($ul.data('index'));
+
+//                var c = $ul.find('span').css('color');
+//                console.log(c);
+//                if(flag){
+//                    console.log("aaaa");
+                    $sibUl.eq(0).find('label').trigger('click');
+//                }
                 $ul.remove();
             },
             onCancel: function() {

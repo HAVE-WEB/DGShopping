@@ -904,15 +904,18 @@
            },
             weiXinBrowers: function () {//对于微信内置浏览器，得剪掉上面导航栏的高度
                 var h = screen.height;
-                var e= $('div.am-navbar').outerHeight();
+                var e= $('div.sl-navbar').outerHeight();
                 var num = 0;
                 var pf = navigator.platform;
-                if((pf === 'Win32') == false){
+                if((pf === 'Win32') == false){//
                     num=42;
                 }
+
+                var t = h - e - num;
                 // console.log("h:"+h+",e:"+e+",n:"+num);
+                console.log('screen_height:'+h+',e:'+e+",num:"+num+',t:'+t);
                 $("div.am-navbar").css({
-                    top: (h-e-num)+"px",
+                    top: t
                 })
             },
             contentListCheck: function () {//审批页面主体内容列表
@@ -1318,6 +1321,36 @@
                 $('div.my-alert').hide();
             },2000);
         },
+        alertInfoByIcon: function (msg,iconClass) {//state:0代表成功，1代表失败
+
+            if(iconClass == ''){
+                iconClass = 'am-icon-spinner am-icon-pulse';
+            }
+            var $alert;
+            $alert = $('<div class="my-alert sl-flex-column-center-center" style="display: block;background-color: black;position:fixed;z-index: 10011;color: white;padding: 0.5rem;-webkit-border-radius: .5rem;-moz-border-radius: .5rem;border-radius: .5rem;"><i class="'+iconClass+'"></i><span></span></div>');
+
+
+            var len = $('div.my-alert').length;
+            if(len){
+                $('div.my-alert').remove();
+                $('body').append($alert);
+                $('div.my-alert').find('span').html(msg);
+                $('div.my-alert').show().css({
+                    left: screen.width/2-$('div.my-alert').outerWidth()/2,
+                    top: screen.height/2-$('div.my-alert').outerHeight()/2,
+                });
+            }else{
+                $('body').append($alert);
+                $('div.my-alert').find('span').html(msg);
+                $('div.my-alert').show().css({
+                    left: screen.width/2-$('div.my-alert').outerWidth()/2,
+                    top: screen.height/2-$('div.my-alert').outerHeight()/2,
+                });
+            }
+            setTimeout(function () {
+                $('div.my-alert').hide();
+            },2000);
+        },
         alertInfo: function (msg) {
             var $alert = $('<div class="my-alert" style="display: block;background-color: black;position:fixed;z-index: 10011;color: white;padding: 0.5rem;-webkit-border-radius: .5rem;-moz-border-radius: .5rem;border-radius: .5rem;"></div>');
             var len = $('div.my-alert').length;
@@ -1337,17 +1370,18 @@
                 $('div.my-alert').hide();
             },2000);
         },
-        bottomNavFixed: function (self) {
-            var sH = screen.height;
-            var sW = screen.width;
-            var h = self.outerHeight();
-            var w = self.outerWidth();
-            self.css({
-                position: 'fixed',
-                top: sH - h,
-                left: sW -  w
-            }).css('z-index','10001');
-        },
+        // bottomNavFixed: function (self) {
+        //     var sH = screen.height;
+        //     var sW = screen.width;
+        //     var h = self.outerHeight();
+        //     var w = self.outerWidth();
+        //     self.css({
+        //         position: 'fixed',
+        //         // top: sH - h,
+        //         left: sW -  w,
+        //         zIndex: 10002
+        //     })
+        // },
         inputVal: function ($input) {
                 // var k = $.trim($input.val());
                 // if(k === ''){

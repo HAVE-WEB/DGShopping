@@ -54,7 +54,7 @@
     </style>
 
 </head>
-<body >
+<body style="overflow-x: hidden;overflow-y: scroll">
 <div class="top-div" style="width: 100%;position:fixed;top: 0px;left: 0px;z-index: 10001">
     <div class="sl-flex-row-center-flex-start " style="background-color: red;height: 3rem;padding-left: 0.8rem;">
         <img src="../assets/images/back.png" alt="" style="width: 1.5rem;height: 1.5rem;" onclick="goBack()">
@@ -189,7 +189,7 @@
         </div>
     </div>
 </div>
-<div class="sl-flex-column-center-center" style="width: 100%;background-color: white" id="translate">
+<div class="sl-flex-column-center-center" style="width: 100%;background-color: white;display: none" id="translate">
     <div style="width: 100%;text-align: center;">商品参数</div>
     <!--overflow: scroll;height: 12rem-->
     <div class="sl-flex-column-flex-start-center">
@@ -400,6 +400,7 @@
         if(cX >= bX && cX <= bX + bW && cY >= bY && cY <= bY + bH){
             var dH = $('#translate').outerHeight();
             $('#grayTier').show();
+            $('#translate').show();
             $('#translate').animate({
                 top: wH-dH
             },300);

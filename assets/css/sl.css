@@ -174,6 +174,9 @@
 .sl-margin-08rem-08rem-0rem-08rem{
     margin: .8rem .8rem 0rem .8rem;
 }
+.sl-margin-0rem-08rem-08rem-08rem{
+    margin: 0rem .8rem .8rem .8rem;
+}
 .sl-margin-left-08rem{
      margin-left: .8rem ;
  }
@@ -207,7 +210,7 @@
     color: #FFFFFF;
 }
 .sl-icon-color-red{
-    color: #FF3366;
+    color: red;
 }
 .sl-icon-color-dd514c{
     color: #dd514c;
@@ -383,7 +386,7 @@
 }
 .sl-tab-panel{
     margin:.5rem;
-    background-color: #f391a9;
+    background-color: white;
     padding: 0.2rem;
     -webkit-border-radius: 0.3rem;
     -moz-border-radius: 0.3rem;
@@ -423,4 +426,10 @@
 }
 .sl-border-shadow{
    box-shadow: none;
+}
+.sl-background-color-red{
+    background-color: red;
+}
+.sl-color-red{
+    color: red;
 }

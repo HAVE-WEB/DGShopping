@@ -155,7 +155,7 @@
 <!--灰色层-->
 <div id="grayTier"></div>
 
-<div id="bottomNav" style="width: 100%;" class="sl-flex-row-center-space-between">
+<div id="bottomNav" style="width: 100%;" class="sl-flex-row-center-space-between sl-navbar">
     <div style="width: 70%;background-color: white;height:3rem;color: black;" class="sl-flex-row-center-flex-start">
         <span style="font-size: 0.8rem;color: black;margin-top: 0.2rem;margin-left: .8rem;">花费的积分&nbsp;&nbsp;:</span><b style="color: red;margin-left: .8rem;">0</b>
     </div>
@@ -166,7 +166,7 @@
 </div>
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog" style="background-color: white">
-        <div class="am-modal-hd">请输入购买的数量</div>
+        <div class="am-modal-hd">请输入兑换的数量</div>
         <div class="am-modal-bd sl-flex-column-center-center">
             <div class="sl-flex-row-center-space-around" style="width: 100%;">
                 <span>数量:</span>
@@ -206,6 +206,7 @@
        rem.bottomNavFixed($('#bottomNav'));
         var lH = $('#bottomNav').children('div').eq(0).outerHeight();
         $('#bottomNav').children('div').eq(1).css('height',lH);
+        rem.weiXinBrowers();
     });
     //将列表页面上的数据移动到本页面
     $(function () {
