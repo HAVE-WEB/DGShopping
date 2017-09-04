@@ -284,14 +284,6 @@
         if(cX >= bX && cX <= bX + bW && cY >= bY && cY <= bY + bH){
 
         }else{
-
-            //图片信息
-//            var $img = $(this).children('div').children('div:eq(0)').find('img');
-//            var s = $img.attr('src');
-//            console.log('src:'+s)
-//            var i = s.lastIndexOf('.');
-//            console.log("I:"+i);
-
             //积分信息
             var  price= $(this).find('div.data-JF-KC').find('span:eq(0)').html();
             var KC =  $(this).find('div.data-JF-KC').find('b').html();
@@ -314,17 +306,10 @@
 //            $(this)
 //        location.href = 'commodityDetail.html'
     });
-//    $(document).mousedown(function (e) {
-////        $(this)
-////        location.href = 'commodityDetail.html'
-//        alert('x'+e.clientX+',y:'+e.clientY)
-//        alert('sx'+e.screenX+',sy:'+e.screenY)
-//    });
-
     //标题文字居中
     $(function () {
         rem.titleCenter();
-        rem.bottomNavFixed($('#bottomNav'));
+//        rem.bottomNavFixed($('#bottomNav'));
         $('#bottomNav').prev().css('padding-bottom','3rem');
     });
     //
@@ -338,7 +323,6 @@
         flag =  $ul.find('label').hasClass('am-nohover');
         console.log($ul.find('label')[0]);
         console.log("flag:"+flag);
-
         $('#my-confirm').modal({
             relatedTarget: this,//这个this代表的是$('button.del')
             onConfirm: function(options) {

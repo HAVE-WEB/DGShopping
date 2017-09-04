@@ -63,10 +63,10 @@
 </div>
 <div style="margin-top: 3.2rem;">
     <ul class="am-avg-sm-2" style="background-color: white;" id="list">
-        <li data-fruit-type="0">
+        <li data-fruit-type="pg" data-kind="0" data-slider="3" data-detail="7">
             <div class="sl-margin-04rem-04rem-04rem-08rem sl-border-1px-solid-D3D3D3">
                 <div class="sl-background-color-F6F6F6 sl-flex-row-center-center sl-padding-1rem">
-                    <img src="../assets/images/fruits/pg/slider/pg_2.jpg" alt="" style="width: 100%;height: 100%;">
+                    <img src="../assets/images/fruits/pg/0/slider/pg_2.jpg" alt="" style="width: 100%;height: 100%;">
                 </div>
                 <div class="sl-border">
                     <div class="am-text-truncate">智利嘎啦果6个115g以上/个</div>
@@ -91,10 +91,10 @@
                 </div>
             </div>
         </li>
-        <li data-fruit-type="1">
+        <li data-fruit-type="gng" data-kind="0" data-slider="3" data-detail="6">
             <div class="sl-margin-04rem-08rem-04rem-04rem sl-border-1px-solid-D3D3D3">
                 <div class="sl-background-color-F6F6F6 sl-flex-row-center-center sl-padding-1rem">
-                    <img src="../assets/images/fruits/gng/slider/gng_2.jpg" alt="" style="width: 100%;height: 100%;">
+                    <img src="../assets/images/fruits/gng/0/slider/gng_2.jpg" alt="" style="width: 100%;height: 100%;">
                 </div>
                 <div class="sl-border">
                     <div class="am-text-truncate">吉林长白山菇娘果500g</div>
@@ -397,51 +397,35 @@
         var bX = $b.offset().left;//元素对象相对于文档对象的左边缘的位置
         var bY = $b.offset().top;//元素对象相对于文档对象的顶部边缘的位置
 
-        if(cX >= bX && cX <= bX + bW && cY >= bY && cY <= bY + bH){
+        if (cX >= bX && cX <= bX + bW && cY >= bY && cY <= bY + bH) {
             var dH = $('#translate').outerHeight();
             $('#grayTier').show();
             $('#translate').show();
             $('#translate').animate({
-                top: wH-dH
-            },300);
-        }else{
-
-            //图片信息
-//            var $img = $(this).children('div').children('div:eq(0)').find('img');
-//            var s = $img.attr('src');
-//            console.log('src:'+s)
-//            var i = s.lastIndexOf('.');
-//            console.log("I:"+i);
-
+                top: wH - dH
+            }, 300);
+        } else {
             //积分信息
-            var  price= $(this).find('div.data-JF-KC').find('span:eq(0)').html();
-            var KC =  $(this).find('div.data-JF-KC').find('b').html();
+            var price = $(this).find('div.data-JF-KC').find('span:eq(0)').html();
+            var KC = $(this).find('div.data-JF-KC').find('b').html();
             var yourJF = 300;
-            console.log("P:"+price+"KC:"+KC);
-            sessionStorage.setItem('yourJF',yourJF);
-            sessionStorage.setItem('price',price);
-            sessionStorage.setItem('KC',KC);
-            var t = $(this).data('fruitType');
-            console.log("t:"+t);
-            console.log(typeof t);
-//            if(t === 0){
-//                location.href = 'apple.html'
-//            }else if(t === 1){
-//                location.href = 'girlFruit.html'
-//            }
+            console.log("P:" + price + "KC:" + KC);
+            sessionStorage.setItem('yourJF', yourJF);
+            sessionStorage.setItem('price', price);
+            sessionStorage.setItem('KC', KC);
+
+            var fruitType = $(this).data('fruitType');
+            var kind = $(this).data('kind');
+            var detail = $(this).data('detail');
+            var slider = $(this).data('slider');
+            sessionStorage.setItem('fruitType', fruitType);
+            sessionStorage.setItem('kind', kind);
+            sessionStorage.setItem('slider', slider);
+            sessionStorage.setItem('detail', detail);
+//            console.log('fT:'+fruitType)
             location.href = 'commodityDetail.html'
         }
-//        console.log("cx:"+cX+",cy:"+cY+',bx:'+bX+',by:'+bY+',bw:'+bW+",bh:"+bH);
-//            $(this)
-//        location.href = 'commodityDetail.html'
-    });
-//    $(document).mousedown(function (e) {
-////        $(this)
-////        location.href = 'commodityDetail.html'
-//        alert('x'+e.clientX+',y:'+e.clientY)
-//        alert('sx'+e.screenX+',sy:'+e.screenY)
-//    });
-
+    })
     //标题文字居中
     $(function () {
         rem.titleCenter();

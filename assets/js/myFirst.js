@@ -57,7 +57,7 @@
 
         this.bottomNavIndex= bottomNavIndex;
         this.initFontSize();
-        // this.weiXinBrowers();
+        this.weiXinBrowers();
 
 
         this.adapterWidth_object = function () {//对象方法
@@ -202,7 +202,7 @@
                  // console.log("flag:"+flag+",in:"+parseInt(bottomNavIndex));
                 if(flag === 'true'){
                     this.adapterWidth_object();
-                    this.weiXinBrowers();
+                    // this.weiXinBrowers();
                 }else{
                     if(parseInt(bottomNavIndex) === 0){
                         // this.topNav();
@@ -222,7 +222,7 @@
                     }
                     // this.bottomNav();
                     this.adapterWidth_object();
-                    this.weiXinBrowers();
+                    // this.weiXinBrowers();
                 }
             },
             initPage: function () {//根据不同页面，来设置flag的值
@@ -884,7 +884,7 @@
                 }
                 var title = s + menuName;
                 $('title').html(title);
-                this.weiXinBrowers();
+                // this.weiXinBrowers();
                 this.setHref();
                 this.setMainContentHeight();
             },
@@ -903,19 +903,12 @@
                })
            },
             weiXinBrowers: function () {//对于微信内置浏览器，得剪掉上面导航栏的高度
-                var h = screen.height;
-                var e= $('div.sl-navbar').outerHeight();
-                var num = 0;
-                var pf = navigator.platform;
-                if((pf === 'Win32') == false){//
-                    num=42;
-                }
-
-                var t = h - e - num;
-                // console.log("h:"+h+",e:"+e+",n:"+num);
-                console.log('screen_height:'+h+',e:'+e+",num:"+num+',t:'+t);
-                $("div.am-navbar").css({
-                    top: t
+               
+                $("div.sl-navbar").css({
+                    position: 'fixed',
+                    left: 0,
+                    bottom: 0,
+                    zIndex: 1010,
                 })
             },
             contentListCheck: function () {//审批页面主体内容列表
