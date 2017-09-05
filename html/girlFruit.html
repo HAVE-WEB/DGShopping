@@ -153,16 +153,15 @@
 
 
 <!--灰色层-->
-<div id="grayTier"></div>
+<div id="grayTier" class="sl-width-percent100 sl-height-percent100"></div>
 
 <div id="bottomNav" style="width: 100%;" class="sl-flex-row-center-space-between sl-navbar">
     <div style="width: 70%;background-color: white;height:3rem;color: black;" class="sl-flex-row-center-flex-start">
-        <span style="font-size: 0.8rem;color: black;margin-top: 0.2rem;margin-left: .8rem;">花费的积分&nbsp;&nbsp;:</span><b style="color: red;margin-left: .8rem;">0</b>
+        <span style="font-size: 0.8rem;color: black;margin-left: .8rem;">花费的积分&nbsp;&nbsp;:</span><b style="font-size: 0.8rem;color: red;margin-left: .8rem;">0</b>
     </div>
-    <div style="width: 30%;background-color: red;;text-align: center;color: white;" class="sl-flex-column-center-center">
+    <div style="width: 30%;background-color: red;text-align: center;color: white;height: 3rem;" class="sl-flex-column-center-center">
         <span>立即兑换</span>
     </div>
-
 </div>
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog" style="background-color: white">
@@ -201,13 +200,6 @@
     var $needJF = $('#bottomNav').children('div:eq(0)').find('b');
     var wH = screen.height;
 
-    //底部导航栏
-    $(function () {
-//       rem.bottomNavFixed($('#bottomNav'));
-        var lH = $('#bottomNav').children('div').eq(0).outerHeight();
-        $('#bottomNav').children('div').eq(1).css('height',lH);
-        rem.weiXinBrowers();
-    });
     //将列表页面上的数据移动到本页面
     $(function () {
        var yourJF = parseInt(sessionStorage.getItem('yourJF'));
@@ -225,8 +217,9 @@
     $(function () {
        $("#translate").css({
            position: 'fixed',
-           top: wH,
+           bottom: -$("#translate").outerHeight(),
            left: 0,
+           right: 0,
        }).css('z-index',10005)
     });
     //灰色一层
@@ -236,8 +229,6 @@
             position: 'fixed',
             top: 0,
             left: 0,
-            width: wW,
-            height: wH,
             backgroundColor: '#A5A4A5',
             zIndex: 10002,
             display: 'none',
@@ -250,7 +241,7 @@
         var dH = $('#translate').outerHeight();
         $('#grayTier').show();
         $('#translate').animate({
-            top: wH-dH
+            bottom: 0
         },300);
     });
     //点击商品信息完成按钮
@@ -264,15 +255,26 @@
     function hideTied() {
         $('#grayTier').hide();
         $('#translate').animate({
-            top: wH
+            bottom:-$("#translate").outerHeight(),
         },300);
     }
-    //
     $(function () {
         var h = $('#bottomNav').outerHeight();
-        $('#detailList').css({
-            marginBottom: h,
-        })
+        var flag = false
+        var pf = navigator.platform;
+        if((pf === 'Win32') == false){
+            flag = true;
+        }
+        if(flag){
+            $('#detailList').css({
+                marginBottom: h+42,
+            })
+        }else{
+            $('#detailList').css({
+                marginBottom: h,
+            })
+        }
+
     });
     //标题文字居中
     $(function () {

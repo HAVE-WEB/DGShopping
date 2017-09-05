@@ -8067,6 +8067,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var dimmer = __webpack_require__(9);
 	var $doc = $(document);
 	var supportTransition = UI.support.transition;
+	console.log(supportTransition);
 
 	/**
 	 * @reference https://github.com/nolimits4web/Framework7/blob/master/src/js/modals.js
@@ -8074,6 +8075,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	var Modal = function(element, options) {
+        console.log(element);
+        console.log(options);
+
 	  this.options = $.extend({}, Modal.DEFAULTS, options || {});
 	  this.$element = $(element);
 	  this.$dialog = this.$element.find('.am-modal-dialog');
@@ -8382,6 +8386,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	var OffCanvas = function(element, options) {
+		console.log(element);
+		console.log(options);
 	  this.$element = $(element);
 	  this.options = $.extend({}, OffCanvas.DEFAULTS, options);
 	  this.active = null;
@@ -8423,6 +8429,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      'margin-left': $bar.outerWidth() * dir
 	    }).width(); // force redraw
 	  }
+	  console.log($html);
+	  console.log(scrollPos.y * -1);
 
 	  $html.css('margin-top', scrollPos.y * -1);
 
@@ -8481,6 +8489,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    $element.removeClass('am-active');
 	    $bar.removeClass('am-offcanvas-bar-active');
+	    console.log('margin-top')
 	    $html.css('margin-top', '');
 	    window.scrollTo(scrollPos.x, scrollPos.y);
 	    $element.trigger('closed.offcanvas.amui');
@@ -14186,6 +14195,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  $.each($element.css(
 	      ['marginTop', 'marginRight', 'marginBottom', 'marginLeft']),
 	    function(name, value) {
+	  	console.log('bbbbb');
 	      return $elementMargin += ' ' + value;
 	    });
 

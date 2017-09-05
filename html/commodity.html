@@ -37,24 +37,24 @@
     <script src="../assets/js/amazeui.js"></script>
     <script src="../assets/js/myFirst.js"></script>
     <style>
-        div.am-tabs-bd button{
-            /*border: 6px solid red;*/
-            padding: 0.2rem 0.6rem;
-            color: white;
-            background-color: red;
-            /*-webkit-border-radius: 2px;*/
-            /*-moz-border-radius: 2px;*/
-            /*border-radius: 0.8rem;*/
-        }
+        /*div.am-tabs-bd button{*/
+            /*!*border: 6px solid red;*!*/
+            /*padding: 0.2rem 0.6rem;*/
+            /*color: white;*/
+            /*background-color: red;*/
+            /*!*-webkit-border-radius: 2px;*!*/
+            /*!*-moz-border-radius: 2px;*!*/
+            /*!*border-radius: 0.8rem;*!*/
+        /*}*/
 
-        ::-webkit-scrollbar{
-            width: 0.1rem;
-        }
+        /*::-webkit-scrollbar{*/
+            /*width: 0.1rem;*/
+        /*}*/
 
     </style>
 
 </head>
-<body style="overflow-x: hidden;overflow-y: scroll">
+<body>
 <div class="top-div" style="width: 100%;position:fixed;top: 0px;left: 0px;z-index: 10001">
     <div class="sl-flex-row-center-flex-start " style="background-color: red;height: 3rem;padding-left: 0.8rem;">
         <img src="../assets/images/back.png" alt="" style="width: 1.5rem;height: 1.5rem;" onclick="goBack()">
@@ -478,7 +478,7 @@
    </div>
 </div>
 
-<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default " style="border-top: 2px solid #E5E5E5;">
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default sl-navbar" style="border-top: 2px solid #E5E5E5;">
     <ul class=" am-navbar-nav am-cf am-avg-sm-4 ">
         <li >
             <a href="#" class="">
@@ -536,9 +536,6 @@
         $('button').on('click', function () {
             var  price= $(this).parent().parent().prev().find('span:eq(0)').html();
             numKC =  $(this).parent().parent().prev().find('b').html();
-
-//            var price = parseInt($(this).prev().find('span:first').html());//获取商品价格
-//            numKC =  parseInt($(this).parent().prev().html());
            var $tr = $('table:eq(0) tr');
             $tr.eq(1).children('td').eq(1).html(price);//将商品价格放入到td中
             var yourJF = parseInt($tr.eq(0).children('td').eq(1).html());//你的所有积分
@@ -556,7 +553,7 @@
                 onConfirm: function(e) {
                     var tempNum =parseInt($.trim(e.data[0])) ;
                     var tempNum1 =parseInt($.trim(e.data[1])) ;
-                    console.log("f:"+tempNum+'.s:'+tempNum1);
+//                    console.log("f:"+tempNum+'.s:'+tempNum1);
                     if(isNaN(tempNum)){//先判断是不是数字
                         rem.alertInfoByState('兑换失败',1)
                     }else{
@@ -564,7 +561,6 @@
                     }
                 },
                 onCancel: function(e) {
-//                    alert('不想说!');
                 }
             });
         })

@@ -37,23 +37,12 @@
     <script src="../assets/js/amazeui.js"></script>
     <script src="../assets/js/myFirst.js"></script>
     <style>
-        div.am-tabs-bd button{
-            /*border: 6px solid red;*/
-            padding: 0.2rem 0.6rem;
-            color: white;
-            background-color: red;
-            /*-webkit-border-radius: 2px;*/
-            /*-moz-border-radius: 2px;*/
-            /*border-radius: 0.8rem;*/
-        }
-
         ::-webkit-scrollbar{
             width: 0.1rem;
         }
         input:focus{
             outline:0px auto -webkit-focus-ring-color ;
         }
-
     </style>
 
 </head>
@@ -64,7 +53,7 @@
         <div style="color: white;" class="title">地址列表</div>
     </div>
 </div>
-<div style="padding-top: 3.8rem;">
+<div style="padding-top: 3.8rem;" id="detailList">
     <ul data-index="0" class="am-avg-sm-3 am-avg-md-3 am-avg-lg-3 sl-margin-0rem-08rem-08rem-08rem sl-background-color-white sl-flex-row-center-center sl-padding-08rem sl-border-radius-08rem" >
         <li style="width: 100%;">
             <div class="sl-flex-row-center-space-between" >
@@ -201,116 +190,35 @@
     var num = 0;
     var numKC = 0;
 
+//    $(function () {
+//        var h = $('#bottomNav').outerHeight();
+//        var flag = false
+//        var pf = navigator.platform;
+//        if((pf === 'Win32') == false){
+//            flag = true;
+//        }
+//        if(flag){
+//            $('#detailList').css({
+//                marginBottom: h+42,
+//            })
+//        }else{
+//            $('#detailList').css({
+//                marginBottom: h,
+//            })
+//        }
+//
+//    });
+
     //排序
     $('ul.am-dropdown-content li').click(function () {
         $(this).addClass('am-active').siblings('li').removeClass('am-active');
     });
 
-    //点击兑换按钮
-    $(function () {
-        $('button').on('click', function () {
-            var  price= $(this).parent().parent().prev().find('span:eq(0)').html();
-            numKC =  $(this).parent().parent().prev().find('b').html();
-
-//            var price = parseInt($(this).prev().find('span:first').html());//获取商品价格
-//            numKC =  parseInt($(this).parent().prev().html());
-           var $tr = $('table:eq(0) tr');
-            $tr.eq(1).children('td').eq(1).html(price);//将商品价格放入到td中
-            var yourJF = parseInt($tr.eq(0).children('td').eq(1).html());//你的所有积分
-            num = parseInt(yourJF / price);
-            $tr.eq(2).children('td').eq(1).find('b').html(numKC);//你的积分可以购买的个数
-            $tr.eq(3).children('td').eq(1).find('b').html(num)//库存
-            if(num > numKC){
-                $tr.eq(4).children('td').eq(1).find('input').attr('max',numKC);
-            } else {
-                $tr.eq(4).children('td').eq(1).find('input').attr('max',num);
-            }
-
-            $('#my-prompt').modal({
-                relatedTarget: this,
-                onConfirm: function(e) {
-                    var tempNum =parseInt($.trim(e.data[0])) ;
-                    var tempNum1 =parseInt($.trim(e.data[1])) ;
-                    console.log("f:"+tempNum+'.s:'+tempNum1);
-                    if(isNaN(tempNum)){//先判断是不是数字
-                        rem.alertInfoByState('兑换失败',1)
-                    }else{
-                        rem.alertInfoByState('兑换成功',0)
-                    }
-                },
-                onCancel: function(e) {
-//                    alert('不想说!');
-                }
-            });
-        })
-    });
-    //时时刻刻检查输入框中的值
-    function checkVal(self) {
-        var flag = false;
-        var f = $(self).val();
-        if(f.indexOf('.') > 0){
-            flag = true;
-        }
-        var n = parseInt($(self).val());
-        if(isNaN(n) || n <= 0  ||flag){
-            $(self).val('');
-            rem.alertInfoByState('请输入正整数',1)
-        }
-        if(num > numKC){
-            if( n > numKC ){
-                $(self).val('');
-                rem.alertInfoByState('库存不足',1)
-            }
-        }else{
-            if( n > num ){
-                $(self).val('');
-                rem.alertInfoByState('积分不足',1)
-            }
-        }
-
-    }
-
-    //点击商品列表
-    $("#list li").mousedown(function (e) {
-        var cX = e.pageX;//鼠标对象相对于文档对象的左边缘的位置
-
-        var cY = e.pageY;//鼠标对象相对于文档对象的顶部边缘的位置
-        var $b = $(this).find('button')
-        var bW = $b.outerWidth();
-        var bH = $b.outerHeight();
-        var bX = $b.offset().left;//元素对象相对于文档对象的左边缘的位置
-        var bY = $b.offset().top;//元素对象相对于文档对象的顶部边缘的位置
-
-        if(cX >= bX && cX <= bX + bW && cY >= bY && cY <= bY + bH){
-
-        }else{
-            //积分信息
-            var  price= $(this).find('div.data-JF-KC').find('span:eq(0)').html();
-            var KC =  $(this).find('div.data-JF-KC').find('b').html();
-            var yourJF = 300;
-            console.log("P:"+price+"KC:"+KC);
-            sessionStorage.setItem('yourJF',yourJF);
-            sessionStorage.setItem('price',price);
-            sessionStorage.setItem('KC',KC);
-            var t = $(this).data('fruitType');
-            console.log("t:"+t);
-            console.log(typeof t);
-            if(t === 0){
-                location.href = 'apple.html'
-            }else if(t === 1){
-                location.href = 'girlFruit.html'
-            }
-//            location.href = 'commodityDetail.html'
-        }
-//        console.log("cx:"+cX+",cy:"+cY+',bx:'+bX+',by:'+bY+',bw:'+bW+",bh:"+bH);
-//            $(this)
-//        location.href = 'commodityDetail.html'
-    });
     //标题文字居中
     $(function () {
         rem.titleCenter();
 //        rem.bottomNavFixed($('#bottomNav'));
-        $('#bottomNav').prev().css('padding-bottom','3rem');
+        $('#bottomNav').prev().css('padding-bottom','.4rem');
     });
     //
     function goBack() {

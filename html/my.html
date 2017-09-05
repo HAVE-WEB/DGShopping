@@ -94,7 +94,7 @@
     <li style="">
         <span>我的订单</span>
     </li>
-    <li data-index="0">
+    <li data-index="0" class="sl-bought-list">
         <div class="sl-flex-row-center-flex-end sl-font-size-14px">
             <span class="sl-margin-right-5px">历史兑换</span>
             <div><img src="../assets/images/方向右.png" alt="" style="width: 1rem;height: 1rem;"></div>
@@ -102,13 +102,13 @@
     </li>
 </ul>
 <ul class="am-avg-sm-2 am-avg-md-2 am-avg-lg-2 sl-background-color-white sl-margin-0rem-08rem sl-border-radius-0rem-0rem-08rem-08rem" id="boughtItem">
-    <li data-index="1">
+    <li data-index="1" class="sl-bought-list">
         <div class="sl-flex-column-center-center sl-padding-10px-0px">
            <i class="am-icon-paypal sl-icon-color-red am-icon-sm"></i>
             <span class="sl-font-color-gray sl-font-size-14px">待发货</span>
         </div>
     </li>
-    <li data-index="2">
+    <li data-index="2" class="sl-bought-list">
         <div class="sl-flex-column-center-center  sl-padding-10px-0px">
            <i class="am-icon-truck sl-icon-color-red am-icon-sm"></i>
             <span class="sl-font-color-gray sl-font-size-14px">待收货</span>
@@ -124,7 +124,7 @@
     </li>
 </ul>
 
-<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default" style="border-top: 2px solid #E5E5E5;">
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default sl-navbar" style="border-top: 2px solid #E5E5E5;">
     <ul class=" am-navbar-nav am-cf am-avg-sm-4 ">
         <li >
             <a href="commodity.html" class="">
@@ -170,7 +170,7 @@
         location.href = 'boughtList.html'
 
     });
-    $('li[data-index="0"]').click(function () {
+    $('li.sl-bought-list').click(function () {
         var index = $(this).data('index');
         sessionStorage.setItem('index',index);
         location.href = 'boughtList.html'
