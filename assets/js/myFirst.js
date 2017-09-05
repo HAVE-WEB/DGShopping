@@ -8,6 +8,7 @@
         this.innerHeight = window.screen.height;
         this.initFontSize();
         this.weiXinBrowers();
+        this.modalDialog();
     }
     Rem.prototype = {
         initFontSize: function () {
@@ -171,7 +172,22 @@
                     return false
                 }
                 return true
-        }
+        },
+        modalDialog: function () {
+            var self = this;
+            var num = self.width;
+            if(num <= 320){//iphone6的宽度一下 字体大小为14px
+                $("div.am-modal-dialog").css("top","16rem");//百分比对象的字体大小为14px，0.875em
+            }else if(num <= 375){//宽度在iphone6-iphone6s之间
+                $("div.am-modal-dialog").css("top","17rem");//16px
+            }else if(num <= 414){
+                $("div.am-modal-dialog").css("top","20rem")
+            } else {
+                $("div.am-modal-dialog").css("top","23rem");
+            }
+
+
+        },
     };
     if(typeof module !="undefined" && module.exports){
         module.exports = Rem;

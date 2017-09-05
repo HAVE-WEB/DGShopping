@@ -26,17 +26,6 @@
 :-ms-input-placeholder {
     font-size: 14px;
 }
-* {
-    margin: 0;
-    padding: 0;
-    border:0;
-
-}
-/*html{*/
-    /*font-size:62.5%;*/
-/*}*/
-/*微信背景色*/
-
 .sl-height-40px-width-100percent{
    height: 40px;
     width: 100%;
